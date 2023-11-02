@@ -1,1 +1,1 @@
-// export factory
+export * from './useDefineContentHeight'; // export factory
