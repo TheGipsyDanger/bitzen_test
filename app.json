@@ -1,4 +1,5 @@
 {
+  "inTest": false,
   "expo": {
     "name": "bitzen",
     "slug": "bitzen",

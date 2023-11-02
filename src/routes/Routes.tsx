@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import * as views from '../pages';
+import {inTest} from '../../app.json';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ const viewsNames = Object.keys(views);
 
 export default function Routes() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={inTest ? 'Test' : 'Main'}>
       {viewsNames.map(viewName => (
         <Stack.Screen key={viewName} {...defineRoutesProps(viewName)} />
       ))}

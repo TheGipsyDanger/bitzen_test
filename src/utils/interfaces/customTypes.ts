@@ -65,3 +65,9 @@ export interface IBaseResponse {
   message?: string;
   status: 'Ok' | 'Error';
 }
+
+export interface ISvgIcons {
+  width?: string;
+  height?: string;
+  color?: string;
+}
