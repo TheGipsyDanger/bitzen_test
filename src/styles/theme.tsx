@@ -22,10 +22,15 @@ export const theme = {
     defaultSpace(11),
     defaultSpace(12),
   ],
-  fonts: {},
+  fonts: {
+    regular: 'Poppins_400Regular',
+    medium: 'Poppins_500Medium',
+    semibold: 'Poppins_600SemiBold',
+  },
   fontSizes: {
-    normal: 13,
-    small: 11,
+    big: 24,
+    normal: 20,
+    small: 14,
   },
   colors: {
     white: 'white',

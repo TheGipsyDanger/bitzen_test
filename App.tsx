@@ -4,12 +4,29 @@ import {NavigationContainer} from '@react-navigation/native';
 import store from './src/redux/store';
 import Routes from './src/routes/Routes';
 
-const App: React.FC = () => (
-  <NavigationContainer>
-    <Provider store={store}>
-      <Routes />
-    </Provider>
-  </NavigationContainer>
-);
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+} from '@expo-google-fonts/poppins';
+
+const App = () => {
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+  });
+
+  if (!fontsLoaded) return <></>;
+
+  return (
+    <NavigationContainer>
+      <Provider store={store}>
+        <Routes />
+      </Provider>
+    </NavigationContainer>
+  );
+};
 
 export default App;
