@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {css} from 'styled-components';
-import {theme, IRadius} from '~/styles/theme';
+import {theme, IRadius, IColors} from '~/styles/theme';
 import {
   border,
   boxShadow,
@@ -10,9 +10,10 @@ import {
   typography,
   backgroundColor,
 } from 'styled-system';
+import {IWrappedSystem} from '~/utils';
 
 export default {
-  Wrapped: styled.View`
+  Wrapped: styled.View<IWrappedSystem>`
     ${space};
     ${color};
     ${typography};

@@ -63,10 +63,11 @@ export const Test = (props: ITest.IView) => (
             <Icon.Plus />
             <Icon.ShareNetwork />
             <Icon.Copy />
+            <Icon.Copy color="transparent" />
           </Div>
         </Spacing>
       </Div>
-      <Div bg="black">
+      <Div bg="red">
         <Text color="white">{'White Icons'}</Text>
         <Spacing space={4}>
           <Div flexDirection={'row'} justifyContent="space-between">
@@ -123,6 +124,7 @@ export const Test = (props: ITest.IView) => (
             <Icon.Plus color="white" />
             <Icon.ShareNetwork color="white" />
             <Icon.Copy color="white" />
+            <Icon.Copy color="transparent" />
           </Div>
         </Spacing>
       </Div>

@@ -39,6 +39,7 @@ export interface IWrappedSystem
   center?: boolean;
   onPress?(): void;
   bg?: ResponsiveValue<keyof IColors>;
+  backgroundColor?: ResponsiveValue<keyof IColors>;
   activeOpacity?: number;
 }
 
