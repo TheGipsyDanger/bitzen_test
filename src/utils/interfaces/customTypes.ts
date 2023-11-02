@@ -43,6 +43,12 @@ export interface IWrappedSystem
   activeOpacity?: number;
 }
 
+export type ITextVariants =
+  | 'title'
+  | 'label'
+  | 'labelSemiBold'
+  | 'infos'
+  | 'name';
 export interface ITextSystem
   extends BorderProps,
     ColorProps,
@@ -57,6 +63,7 @@ export interface ITextSystem
   textDecoration?: string;
   font?: keyof IFont;
   size?: keyof IFontSizes;
+  variant?: ITextVariants;
   color?: ResponsiveValue<keyof IColors>;
   testID?: string;
   numberOfLines?: number;
