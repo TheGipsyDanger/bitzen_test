@@ -47,7 +47,7 @@ function interfaceExists(comp) {
 }
 
 function navigatorExistsForViews(comp, folder = 'components', navigator) {
-  const pageContainers = fs.readdirSync(`src/views/${navigator}`);
+  const pageContainers = fs.readdirSync(`src/pages/${navigator}`);
   return pageContainers.indexOf(`${comp}`) >= 0;
 }
 
