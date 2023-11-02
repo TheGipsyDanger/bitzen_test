@@ -2,9 +2,6 @@ import * as React from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {withChildren} from '~/utils';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {metrics} from '../styles/metrics';
-
-const {defaultSpace} = metrics;
 
 export const theme = {
   space: [
@@ -36,9 +33,15 @@ export const theme = {
     neutral_400: '#B3B3B3',
     neutral_500: '#8C8C8',
     neutral_800: '#404040',
+    neutral_900: '#262626',
     blue_black: '#183E4B',
   },
-  raddi: {},
+  raddi: {
+    light: RFValue(4),
+    medium: RFValue(8),
+    normal: RFValue(12),
+    circle: 100,
+  },
   shadows: {},
 };
 

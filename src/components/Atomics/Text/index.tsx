@@ -4,7 +4,7 @@ import {IText} from '~/components/Atomics/Text/Text.types';
 import S from '~/components/Atomics/Text/Text.styles';
 
 export const Text = ({
-  color = 'black',
+  color = 'neutral_900',
   font = 'regular',
   size = 'normal',
   ...props
