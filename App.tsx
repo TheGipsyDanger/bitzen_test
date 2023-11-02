@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {useEffect, useCallback, useState} from 'react';
+import {navigationRef} from '~/utils/navigator';
 import {View} from 'react-native';
 import {Provider} from 'react-redux';
-import {NavigationContainer} from '@react-navigation/native';
 import store from './src/redux/store';
 import * as SplashScreen from 'expo-splash-screen';
 import Routes from './src/routes/Routes';
@@ -12,6 +12,12 @@ import {
   Poppins_500Medium,
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from '@react-navigation/native';
+
+import {ThemeProvider} from '~/styles';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,11 +44,15 @@ const App = () => {
 
   return (
     <View style={{flex: 1}} onLayout={onLayoutRootView}>
-      <NavigationContainer>
-        <Provider store={store}>
-          <Routes />
-        </Provider>
-      </NavigationContainer>
+      <ThemeProvider>
+        <NavigationContainer
+          ref={navigationRef as React.Ref<NavigationContainerRef>}
+        >
+          <Provider store={store}>
+            <Routes />
+          </Provider>
+        </NavigationContainer>
+      </ThemeProvider>
     </View>
   );
 };

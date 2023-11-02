@@ -2,9 +2,10 @@ import styled from 'styled-components/native';
 import {css} from 'styled-components';
 import {Text as TextBase} from 'react-native';
 import {color, space, border, typography, variant} from 'styled-system';
-import {theme, IFont, IFontSizes} from '~/styles/theme';
+import {theme, IFont, IFontSizes, IColors} from '~/styles/theme';
+import {ITextSystem} from '~/utils';
 
-const Text = styled(TextBase)`
+const Text = styled(TextBase)<ITextSystem>`
   ${space};
   ${color};
   ${typography};
@@ -20,6 +21,12 @@ const Text = styled(TextBase)`
     textDecoration &&
     css`
       text-decoration: ${textDecoration};
+    `}
+  
+  ${({color}) =>
+    color &&
+    css`
+      color: ${theme.colors[color as keyof IColors]};
     `}
 
     font-family: ${({font}: {font: keyof IFont}) =>

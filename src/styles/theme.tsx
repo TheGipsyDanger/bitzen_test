@@ -4,22 +4,16 @@ import {withChildren} from '~/utils';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 export const theme = {
-  space: [
-    ...[
-      0,
-      RFValue(4),
-      ...Array.from({length: 8}, (_, index) => RFValue((index + 1) * 8)),
-    ],
-  ],
+  space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80],
   fonts: {
     regular: 'Poppins_400Regular',
     medium: 'Poppins_500Medium',
     semibold: 'Poppins_600SemiBold',
   },
   fontSizes: {
-    big: RFValue(24),
-    normal: RFValue(20),
-    small: RFValue(14),
+    big: 24,
+    normal: 20,
+    small: 14,
   },
   colors: {
     transparent: 'transparent',

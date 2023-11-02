@@ -4,13 +4,12 @@ import {theme} from '~/styles';
 
 export default {
   Content: styled(Div).attrs({
-    height: 55,
+    height: 48,
     px: 3,
     justifyContent: 'center',
     borderWidth: 1,
   })`
-    border-radius: 5px;
-    border: 1px solid ${theme.colors.neutral_500};
+    border-radius: ${theme.raddi.medium}px;
   `,
   Error: styled(Text)`
     text-align: center;
