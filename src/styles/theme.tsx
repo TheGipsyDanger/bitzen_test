@@ -1,26 +1,18 @@
 import * as React from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {withChildren} from '~/utils';
+import {RFValue} from 'react-native-responsive-fontsize';
 import {metrics} from '../styles/metrics';
 
 const {defaultSpace} = metrics;
 
 export const theme = {
   space: [
-    0,
-    defaultSpace() / 2,
-    defaultSpace(),
-    defaultSpace(2),
-    defaultSpace(3),
-    defaultSpace(4),
-    defaultSpace(5),
-    defaultSpace(6),
-    defaultSpace(7),
-    defaultSpace(8),
-    defaultSpace(9),
-    defaultSpace(10),
-    defaultSpace(11),
-    defaultSpace(12),
+    ...[
+      0,
+      RFValue(4),
+      ...Array.from({length: 8}, (_, index) => RFValue((index + 1) * 8)),
+    ],
   ],
   fonts: {
     regular: 'Poppins_400Regular',
@@ -28,9 +20,9 @@ export const theme = {
     semibold: 'Poppins_600SemiBold',
   },
   fontSizes: {
-    big: 24,
-    normal: 20,
-    small: 14,
+    big: RFValue(24),
+    normal: RFValue(20),
+    small: RFValue(14),
   },
   colors: {
     white: 'white',
