@@ -41,7 +41,7 @@ export default {
           fontFamily: theme.fonts.regular,
           fontSize: theme.fontSizes.small,
         },
-        labelBold: {
+        labelSemiBold: {
           fontFamily: theme.fonts.semibold,
           fontSize: theme.fontSizes.small,
         },
