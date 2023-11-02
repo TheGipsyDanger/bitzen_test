@@ -1,11 +1,11 @@
 import {Profile} from './Profile';
-import { MyInfos } from './MyInfos';
+import {MyInfos} from './MyInfos';
 // import views here
 
 const views: {[key: string]: any} = {
   Profile,
   MyInfos,
-// add viewsName here
+  // add viewsName here
 };
 
 export const routes = Object.keys(views).map(route => ({

@@ -3,7 +3,7 @@ import {Register} from './Register';
 import {ResetPassword} from './ResetPassword';
 import {InputToken} from './InputToken';
 import {InputPassword} from './InputPassword';
-import {ResetPassordSuccess} from './ResetPassordSuccess';
+import {ResetPasswordConfirmation} from './ResetPasswordConfirmation';
 // import views here
 
 const views: {[key: string]: any} = {
@@ -12,7 +12,7 @@ const views: {[key: string]: any} = {
   ResetPassword,
   InputToken,
   InputPassword,
-  ResetPassordSuccess,
+  ResetPasswordConfirmation,
   // add viewsName here
 };
 

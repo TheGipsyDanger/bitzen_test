@@ -9,6 +9,7 @@ export enum AppRoutes {
   InputPassword = 'InputPassword',
   Register = 'Register',
   ResetPassword = 'ResetPassword',
+  ResetPasswordConfirmation = 'ResetPasswordConfirmation',
   Home = 'Home',
   RegisterPet = 'RegisterPet',
   MyInfos = 'MyInfos',
