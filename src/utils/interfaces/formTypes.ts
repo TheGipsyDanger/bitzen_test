@@ -11,6 +11,9 @@ export interface ILoginForm<T> {
   email: T;
   password: T;
 }
+export interface IResetPasswordForm<T> {
+  email: T;
+}
 
 export type IControl<T extends FieldValues> = Control<T, any>;
 export type ITrigger<T extends FieldValues> = UseFormTrigger<T>;
@@ -25,6 +28,10 @@ export type ISchema<
   T2 extends yup.Maybe<yup.AnyObject>
 > = yup.ObjectSchema<T1, yup.AnyObject, T2, ''>;
 
-export type IFormInputNameAccepeted = keyof ILoginForm<string>;
+export type IFormInputNameAccepeted =
+  | keyof ILoginForm<string>
+  | keyof IResetPasswordForm<string>;
 
-export type ITriggerFormInput = ITrigger<ILoginForm<string>>;
+export type ITriggerFormInput =
+  | ITrigger<ILoginForm<string>>
+  | ITrigger<IResetPasswordForm<string>>;
