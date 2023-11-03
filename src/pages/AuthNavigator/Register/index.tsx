@@ -16,7 +16,7 @@ export const Register = (props: IRegister.IView) => {
     useRegister(props);
 
   return (
-    <Div flex={1} bg="off_white" testID={`Register`}>
+    <Div flex={1} bg="white" testID={`Register`}>
       <Header />
       <Screen.Default bg="white">
         <Div flex={1} bg="white" px={4}>

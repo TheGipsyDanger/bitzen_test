@@ -14,7 +14,6 @@ export default {
     ${color};
     ${backgroundColor};
     flex: 1;
-    background-color: 'white';
   `,
   KeyboardAvoidStyled: styled(KeyboardAvoidingView)`
     flex: 1;

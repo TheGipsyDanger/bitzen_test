@@ -20,6 +20,8 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
     navigate(AppRoutes.MainNavigator);
   };
 
+  const goToLogin = () => navigate(AppRoutes.Auth);
+
   return {
     control,
     trigger,
@@ -27,5 +29,6 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
     onSubmit,
     errors,
     isValid,
+    goToLogin,
   };
 };
