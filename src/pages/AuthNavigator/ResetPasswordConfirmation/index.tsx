@@ -11,7 +11,7 @@ export const ResetPasswordConfirmation = (
   const {backToLogin} = useResetPasswordConfirmation(props);
   return (
     <Div flex={1} bg="white" testID={`ResetPasswordConfirmation`}>
-      <Header />
+      <Header.Default />
       <Distribution justifyContent="center">
         <Spacing space={8}>
           <Div

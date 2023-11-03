@@ -17,7 +17,7 @@ export const Register = (props: IRegister.IView) => {
 
   return (
     <Div flex={1} bg="white" testID={`Register`}>
-      <Header />
+      <Header.Default />
       <Distribution>
         <Spacing space={4}>
           <Text variant="title">{`Cadastre-se gratuitamente`}</Text>

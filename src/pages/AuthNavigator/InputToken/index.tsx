@@ -19,7 +19,7 @@ export const InputToken = (props: IInputToken.IView) => {
 
   return (
     <Div flex={1} bg="white" testID={`InputToken`}>
-      <Header />
+      <Header.Default />
       <Distribution justifyContent="center">
         <Spacing space={6}>
           <Spacing space={4}>

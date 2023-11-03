@@ -6,5 +6,6 @@ export namespace IHeader {
   export interface IModel extends IView {
     top: number;
     goBack: () => void;
+    goToAddPets: () => void;
   }
 }

@@ -12,7 +12,7 @@ export const ResetPassword = (props: IResetPassword.IView) => {
 
   return (
     <Div flex={1} bg="white" testID={`ResetPassword`}>
-      <Header />
+      <Header.Default />
       <Distribution justifyContent="center">
         <Spacing space={4}>
           <Div

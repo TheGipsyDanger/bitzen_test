@@ -11,7 +11,7 @@ export const InputPassword = (props: IInputPassword.IView) => {
 
   return (
     <Div flex={1} bg="white" testID={`InputPassword`}>
-      <Header />
+      <Header.Default />
       <Distribution justifyContent="center">
         <Spacing space={4}>
           <Text

@@ -11,4 +11,5 @@ export default {
     border-bottom-width: ${1 / 2}px;
     border-color: ${theme.colors.neutral_500};
   `,
+  InternalContainer: styled(Div)``,
 };
