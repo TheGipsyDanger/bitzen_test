@@ -39,3 +39,5 @@ export {Site} from './Site';
 export {Trash} from './Trash';
 export {Upload} from './Upload';
 export {User} from './User';
+export {Facebook} from './Facebook';
+export {Google} from './Google';

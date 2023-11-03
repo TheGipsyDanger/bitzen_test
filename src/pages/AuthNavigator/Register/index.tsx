@@ -4,7 +4,9 @@ import {Header, Button, FormInput} from '~/components';
 import {Div, Spacing, Text, Screen} from '~/components/Atomics';
 import {IRegister} from '~/pages/AuthNavigator/Register/Register.types';
 import {useRegister} from '~/pages/AuthNavigator/Register/Register.model';
+import S from '~/pages/AuthNavigator/Register/Register.styles';
 import {Controller} from 'react-hook-form';
+import * as Icon from '~/assets/svgs';
 
 export const Register = (props: IRegister.IView) => {
   const {control, trigger, handleSubmit, onSubmit, errors, isValid} =
@@ -84,6 +86,20 @@ export const Register = (props: IRegister.IView) => {
               )}
             />
             <Button label="Criar conta" variant="primary" />
+            <Div>
+              <S.FooterButtons>
+                <S.SocialButton mr={2}>
+                  <Icon.Google />
+                </S.SocialButton>
+                <S.SocialButton ml={2}>
+                  <Icon.Facebook />
+                </S.SocialButton>
+              </S.FooterButtons>
+            </Div>
+            <Div flexDirection="row" center>
+              <Text variant="label">{`Já possui conta?`}</Text>
+              <Button label="Entrar" variant="link" ml={1} />
+            </Div>
           </Spacing>
         </Div>
       </Screen.Default>

@@ -18,14 +18,14 @@ export const FormInput = ({
   ...rest
 }: IFormInput.IView) => (
   <Div {...rest} testID={`FormInput`}>
-    <S.Content borderColor={errors?.[name]?.message ? 'error' : 'black'}>
+    <S.Content borderColor={errors?.[name]?.message ? 'error' : 'neutral_300'}>
       <Input
         placeholder={String(placeholder)}
         value={String(value)}
         onBlur={onBlur}
         color={errors?.[name]?.message ? 'error' : 'neutral_900'}
         secureTextEntry={secureTextEntry}
-        mask={defineMask(name)}
+        mask={defineMask(name as keyof ITriggerFormInput)}
         onChangeText={(text: string) => {
           onChange(text);
           trigger(name as keyof ITriggerFormInput);
@@ -33,9 +33,7 @@ export const FormInput = ({
       />
     </S.Content>
     {errors?.[name]?.message && (
-      <Text variant="infos" color="error">
-        {errors?.[name]?.message}
-      </Text>
+      <Text variant="formError">{errors?.[name]?.message}</Text>
     )}
   </Div>
 );

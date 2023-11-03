@@ -60,6 +60,11 @@ export default {
           fontFamily: theme.fonts.semibold,
           fontSize: theme.fontSizes.big,
         },
+        formError: {
+          color: theme.colors.error,
+          fontFamily: theme.fonts.semibold,
+          fontSize: theme.fontSizes.min,
+        },
       },
     })
   ),

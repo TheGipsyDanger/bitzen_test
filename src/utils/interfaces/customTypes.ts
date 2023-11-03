@@ -48,6 +48,7 @@ export type ITextVariants =
   | 'label'
   | 'labelSemiBold'
   | 'infos'
+  | 'formError'
   | 'name';
 export interface ITextSystem
   extends BorderProps,

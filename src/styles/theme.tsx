@@ -14,6 +14,7 @@ export const theme = {
     big: 24,
     normal: 20,
     small: 14,
+    min: 8,
   },
   colors: {
     transparent: 'transparent',
@@ -25,6 +26,7 @@ export const theme = {
     error: '#DC3545',
     ocean_blue: '#00B8C4',
     neutral_100: '#F9F9F9',
+    neutral_300: '#CCCCCC',
     neutral_400: '#B3B3B3',
     neutral_500: '#8C8C8C',
     neutral_800: '#404040',
@@ -32,9 +34,9 @@ export const theme = {
     blue_black: '#183E4B',
   },
   raddi: {
-    light: RFValue(4),
-    medium: RFValue(8),
-    normal: RFValue(12),
+    light: 4,
+    medium: 8,
+    normal: 12,
     circle: 100,
   },
   shadows: {
