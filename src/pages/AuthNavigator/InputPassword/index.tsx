@@ -10,7 +10,7 @@ export const InputPassword = (props: IInputPassword.IView) => {
     useInputPassword(props);
 
   return (
-    <Div flex={1} testID={`InputPassword`}>
+    <Div flex={1} bg="neutral_100" testID={`InputPassword`}>
       <Header />
       <Div flex={1} justifyContent="center" px={4}>
         <Spacing space={4}>
