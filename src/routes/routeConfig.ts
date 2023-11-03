@@ -5,6 +5,7 @@ export enum AppRoutes {
   AuthNavigator = 'AuthNavigator',
   MainNavigator = 'MainNavigator',
   ProfileNavigator = 'ProfileNavigator',
+  TabNavigator = 'TabNavigator',
   Auth = 'Auth',
   InputPassword = 'InputPassword',
   Register = 'Register',
@@ -30,6 +31,7 @@ export type RootParamList = {
   [AppRoutes.RegisterPet]: undefined;
   [AppRoutes.MyInfos]: undefined;
   [AppRoutes.Profile]: undefined;
+  [AppRoutes.TabNavigator]: undefined;
 };
 
 export const AppRouteNames = Object.keys(

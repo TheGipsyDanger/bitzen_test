@@ -29,7 +29,6 @@ export const theme = {
     neutral_300: '#CCCCCC',
     neutral_400: '#B3B3B3',
     neutral_500: '#8C8C8C',
-    neutral_600: '#737373',
     neutral_800: '#404040',
     neutral_900: '#262626',
     blue_black: '#183E4B',
