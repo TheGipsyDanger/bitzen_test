@@ -1,5 +1,19 @@
+import {
+  IControl,
+  ITrigger,
+  IHandlerSubmit,
+  IFormErros,
+  IRegisterForm,
+} from '~/utils/interfaces';
 export namespace IRegister {
   export interface IView {}
   export interface IModelProps {}
-  export interface IModel {}
+  export interface IModel {
+    control: IControl<IRegisterForm<string>>;
+    trigger: ITrigger<IRegisterForm<string>>;
+    handleSubmit: IHandlerSubmit<IRegisterForm<string>>;
+    errors: IFormErros<IRegisterForm<string>>;
+    onSubmit: (data: IRegisterForm<string>) => void;
+    isValid: boolean;
+  }
 }
