@@ -1,4 +1,4 @@
-import {ISchema, IChangePasswordForm} from '~/utils/interfaces/formTypes';
+import {ISchema, IChangePasswordForm} from '~/utils/interfaces';
 import * as yup from 'yup';
 
 const exec = (): ISchema<

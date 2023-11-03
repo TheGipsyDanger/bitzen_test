@@ -15,6 +15,10 @@ const exec = (): ISchema<IRegisterForm<string>, IRegisterForm<any>> => {
     phone: yup.string().required('Campo obrigatório'),
     password: yup.string().required('Campo obrigatório'),
     confirmedPassword: yup.string().required('Campo obrigatório'),
+    agreeTerms: yup
+      .boolean()
+      .required('Campo obrigatório')
+      .oneOf([true], 'Campo obrigatório'),
   });
 };
 

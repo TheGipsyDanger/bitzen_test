@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Header, Button, FormInput} from '~/components';
+import {Header, Button, Checkbox} from '~/components';
 import {Div, Spacing, Text, Screen} from '~/components/Atomics';
 import {IRegister} from '~/pages/AuthNavigator/Register/Register.types';
 import {useRegister} from '~/pages/AuthNavigator/Register/Register.model';
@@ -8,6 +8,7 @@ import {
   HasAccount,
   RegisterForm,
   FooterButtons,
+  Terms,
 } from '~/pages/AuthNavigator/Register/components';
 
 export const Register = (props: IRegister.IView) => {
@@ -32,6 +33,13 @@ export const Register = (props: IRegister.IView) => {
               onPress={handleSubmit(onSubmit)}
               label="Criar conta"
               variant={isValid ? 'primary' : 'disable'}
+            />
+            <Terms
+              {...{
+                errors,
+                control,
+                trigger,
+              }}
             />
             <Separator />
             <FooterButtons />

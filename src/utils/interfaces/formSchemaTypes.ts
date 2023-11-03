@@ -17,4 +17,5 @@ export interface IRegisterForm<T> {
   phone: T;
   password: T;
   confirmedPassword: T;
+  agreeTerms: boolean;
 }

@@ -1,4 +1,4 @@
-import {ISchema, ILoginForm} from '~/utils/interfaces/formTypes';
+import {ISchema, ILoginForm} from '~/utils/interfaces';
 import * as yup from 'yup';
 
 const exec = (): ISchema<ILoginForm<string>, ILoginForm<any>> => {

@@ -1,4 +1,4 @@
-import {ISchema, IResetPasswordForm} from '~/utils/interfaces/formTypes';
+import {ISchema, IResetPasswordForm} from '~/utils/interfaces';
 import * as yup from 'yup';
 
 const exec = (): ISchema<

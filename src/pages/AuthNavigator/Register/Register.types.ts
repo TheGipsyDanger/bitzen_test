@@ -21,4 +21,9 @@ export namespace IRegister {
     trigger: ITrigger<IRegisterForm<string>>;
     errors: IFormErros<IRegisterForm<string>>;
   }
+  export interface ITermFormView {
+    control: IControl<IRegisterForm<string>>;
+    trigger: ITrigger<IRegisterForm<string>>;
+    errors: IFormErros<IRegisterForm<string>>;
+  }
 }

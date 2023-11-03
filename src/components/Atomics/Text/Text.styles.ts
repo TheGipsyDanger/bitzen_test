@@ -56,6 +56,12 @@ export default {
           fontFamily: theme.fonts.regular,
           fontSize: theme.fontSizes.small,
         },
+        spot: {
+          fontFamily: theme.fonts.regular,
+          fontSize: theme.fontSizes.small,
+          color: theme.colors.blue_black,
+          textDecorationLine: 'underline',
+        },
         name: {
           fontFamily: theme.fonts.semibold,
           fontSize: theme.fontSizes.big,
