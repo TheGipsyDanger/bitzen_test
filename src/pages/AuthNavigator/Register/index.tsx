@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Header, Button, Checkbox} from '~/components';
-import {Div, Spacing, Text, Screen} from '~/components/Atomics';
+import {Header, Button, Distribution} from '~/components';
+import {Div, Spacing, Text} from '~/components/Atomics';
 import {IRegister} from '~/pages/AuthNavigator/Register/Register.types';
 import {useRegister} from '~/pages/AuthNavigator/Register/Register.model';
 import {
@@ -18,35 +18,33 @@ export const Register = (props: IRegister.IView) => {
   return (
     <Div flex={1} bg="white" testID={`Register`}>
       <Header />
-      <Screen.Default bg="white">
-        <Div flex={1} bg="white" px={4}>
-          <Spacing space={4}>
-            <Text variant="title">{`Cadastre-se gratuitamente`}</Text>
-            <RegisterForm
-              {...{
-                errors,
-                control,
-                trigger,
-              }}
-            />
-            <Button
-              onPress={handleSubmit(onSubmit)}
-              label="Criar conta"
-              variant={isValid ? 'primary' : 'disable'}
-            />
-            <Terms
-              {...{
-                errors,
-                control,
-                trigger,
-              }}
-            />
-            <Separator />
-            <FooterButtons />
-            <HasAccount />
-          </Spacing>
-        </Div>
-      </Screen.Default>
+      <Distribution>
+        <Spacing space={4}>
+          <Text variant="title">{`Cadastre-se gratuitamente`}</Text>
+          <RegisterForm
+            {...{
+              errors,
+              control,
+              trigger,
+            }}
+          />
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            label="Criar conta"
+            variant={isValid ? 'primary' : 'disable'}
+          />
+          <Terms
+            {...{
+              errors,
+              control,
+              trigger,
+            }}
+          />
+          <Separator />
+          <FooterButtons />
+          <HasAccount />
+        </Spacing>
+      </Distribution>
     </Div>
   );
 };

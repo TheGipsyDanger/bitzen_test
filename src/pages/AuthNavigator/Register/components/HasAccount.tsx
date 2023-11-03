@@ -7,7 +7,7 @@ export const HasAccount = () => {
   const {goToLogin} = useRegister({});
   return (
     <Div flexDirection="row" center>
-      <Text variant="label">{`Já possui conta?`}</Text>
+      <Text variant="infos" color="neutral_600">{`Já possui conta?`}</Text>
       <Button onPress={goToLogin} label="Entrar" variant="link" ml={1} />
     </Div>
   );
