@@ -63,7 +63,11 @@ export const Auth = (props: IAuth.IView) => {
             variant="link"
             alignSelf="flex-end"
           />
-          <Button onPress={onSubmit} label="Entrar" variant="primary" />
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            label="Entrar"
+            variant="primary"
+          />
         </Spacing>
       </S.Content>
     </Div>

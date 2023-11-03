@@ -25,6 +25,7 @@ export type RootParamList = {
   [AppRoutes.InputPassword]: undefined;
   [AppRoutes.Register]: undefined;
   [AppRoutes.ResetPassword]: undefined;
+  [AppRoutes.ResetPasswordConfirmation]: undefined;
   [AppRoutes.Home]: undefined;
   [AppRoutes.RegisterPet]: undefined;
   [AppRoutes.MyInfos]: undefined;

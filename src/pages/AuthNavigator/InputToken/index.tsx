@@ -7,8 +7,15 @@ import {CodeField, Cursor} from 'react-native-confirmation-code-field';
 import S from '~/pages/AuthNavigator/InputToken/InputToken.styles';
 
 export const InputToken = (props: IInputToken.IView) => {
-  const {ref, value, setValue, inputProps, getCellOnLayoutHandler} =
-    useInputToken(props);
+  const {
+    ref,
+    value,
+    setValue,
+    inputProps,
+    getCellOnLayoutHandler,
+    onSubmit,
+    resendCode,
+  } = useInputToken(props);
 
   return (
     <Div flex={1} bg="white" testID={`InputToken`}>
@@ -46,17 +53,18 @@ export const InputToken = (props: IInputToken.IView) => {
               )}
             />
             <Spacing space={4}>
-              <Button
-                label="Próximo"
-                variant="primary"
-                onPress={() => alert('renan')}
-              />
+              <Button label="Próximo" variant="primary" onPress={onSubmit} />
               <Div flexDirection="row" center>
                 <Text
                   variant="infos"
                   color="neutral_600"
                 >{`Não recebeu o código?`}</Text>
-                <Button label="Reenviar" variant="link" ml={1} />
+                <Button
+                  onPress={resendCode}
+                  label="Reenviar"
+                  variant="link"
+                  ml={1}
+                />
               </Div>
             </Spacing>
           </Spacing>

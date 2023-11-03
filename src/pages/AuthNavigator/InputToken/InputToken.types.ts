@@ -8,6 +8,8 @@ export namespace IInputToken {
   export interface IModelProps {}
   export interface IModel {
     value: string;
+    onSubmit: () => void;
+    resendCode: () => void;
     ref: React.RefObject<TextInput>;
     setValue: React.Dispatch<React.SetStateAction<string>>;
     inputProps: {
