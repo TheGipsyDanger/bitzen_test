@@ -15,6 +15,11 @@ export interface IResetPasswordForm<T> {
   email: T;
 }
 
+export interface IChangePasswordForm<T> {
+  password: T;
+  confirmedPassword: T;
+}
+
 export type IControl<T extends FieldValues> = Control<T, any>;
 export type ITrigger<T extends FieldValues> = UseFormTrigger<T>;
 export type IFormErros<T extends FieldValues> = FieldErrors<T>;
@@ -30,8 +35,10 @@ export type ISchema<
 
 export type IFormInputNameAccepeted =
   | keyof ILoginForm<string>
+  | keyof IChangePasswordForm<string>
   | keyof IResetPasswordForm<string>;
 
 export type ITriggerFormInput =
   | ITrigger<ILoginForm<string>>
+  | ITrigger<IChangePasswordForm<string>>
   | ITrigger<IResetPasswordForm<string>>;
