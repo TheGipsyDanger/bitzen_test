@@ -37,7 +37,9 @@ export const theme = {
     normal: RFValue(12),
     circle: 100,
   },
-  shadows: {},
+  shadows: {
+    header: '0px 2px 8px 10px rgba(0,0,0, 0.25)',
+  },
 };
 
 export type IFont = typeof theme.fonts;

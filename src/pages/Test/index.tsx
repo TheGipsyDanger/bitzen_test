@@ -4,7 +4,7 @@ import {ITest} from '~/pages/Test/Test.types';
 import * as Icon from '~/assets/svgs';
 
 export const Test = (props: ITest.IView) => (
-  <Screen>
+  <Screen.Default>
     <Div flex={1} testID={`Test`}>
       <Div>
         <Text>{'Black Icons'}</Text>
@@ -129,5 +129,5 @@ export const Test = (props: ITest.IView) => (
         </Spacing>
       </Div>
     </Div>
-  </Screen>
+  </Screen.Default>
 );

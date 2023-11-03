@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Div, Spacing, Text} from '~/components/Atomics';
+import {Div, Spacing, Text, Screen} from '~/components/Atomics';
 import {Header, Button, FormInput} from '~/components';
 import {IInputPassword} from '~/pages/AuthNavigator/InputPassword/InputPassword.types';
 import {useInputPassword} from '~/pages/AuthNavigator/InputPassword/InputPassword.model';
@@ -10,7 +10,7 @@ export const InputPassword = (props: IInputPassword.IView) => {
     useInputPassword(props);
 
   return (
-    <Div flex={1} bg="neutral_100" testID={`InputPassword`}>
+    <Screen.Default bg="neutral_100" testID={`InputPassword`}>
       <Header />
       <Div flex={1} justifyContent="center" px={4}>
         <Spacing space={4}>
@@ -48,6 +48,6 @@ export const InputPassword = (props: IInputPassword.IView) => {
           <Button label="Redefinir senha" variant="primary" />
         </Spacing>
       </Div>
-    </Div>
+    </Screen.Default>
   );
 };
