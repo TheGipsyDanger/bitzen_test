@@ -16,4 +16,9 @@ export namespace IRegister {
     onSubmit: (data: IRegisterForm<string>) => void;
     isValid: boolean;
   }
+  export interface IRegisterFormView {
+    control: IControl<IRegisterForm<string>>;
+    trigger: ITrigger<IRegisterForm<string>>;
+    errors: IFormErros<IRegisterForm<string>>;
+  }
 }

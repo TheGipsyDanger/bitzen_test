@@ -10,6 +10,9 @@ export default {
         primary: {
           backgroundColor: theme.colors.blue_black,
         },
+        disable: {
+          backgroundColor: theme.colors.neutral_300,
+        },
         link: {
           backgroundColor: theme.colors['transparent'],
         },
@@ -20,6 +23,11 @@ export default {
     variant({
       variants: {
         primary: {
+          color: theme.colors.white,
+          fontFamily: theme.fonts.semibold,
+          fontSize: theme.fontSizes.small,
+        },
+        disable: {
           color: theme.colors.white,
           fontFamily: theme.fonts.semibold,
           fontSize: theme.fontSizes.small,

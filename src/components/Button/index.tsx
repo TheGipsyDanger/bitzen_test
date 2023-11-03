@@ -10,16 +10,20 @@ export const Button = ({
   isLoading = false,
   ...rest
 }: IButton.IView) => (
-  <Div onPress={onPress} testID={`Button`}>
+  <Div onPress={rest.variant === 'disable' ? null : onPress} testID={`Button`}>
     <S.Container
       {...rest}
       center
       height={rest.variant === 'link' ? null : 48}
       radius="medium"
     >
-      <S.Label variant={rest.variant} testID={`Button:Label`}>
-        {isLoading ? <ActivityIndicator /> : label}
-      </S.Label>
+      {isLoading ? (
+        <ActivityIndicator color="white" />
+      ) : (
+        <S.Label variant={rest.variant} testID={`Button:Label`}>
+          {label}
+        </S.Label>
+      )}
     </S.Container>
   </Div>
 );
