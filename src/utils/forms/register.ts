@@ -2,21 +2,42 @@ import {ISchema, IRegisterForm} from '~/utils/interfaces';
 
 import * as yup from 'yup';
 
-const exec = (): ISchema<IRegisterForm<string>, IRegisterForm<any>> => {
+const exec = (): ISchema<
+  IRegisterForm<string, boolean>,
+  IRegisterForm<any, any>
+> => {
   return yup.object().shape({
-    name: yup.string().required('Campo obrigatório'),
-    document: yup.string().required('Campo obrigatório'),
+    name: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(4, 'Formato inválido.'),
+    document: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(11, 'Formato inválido.'),
     email: yup
       .string()
       .trim()
       .lowercase()
       .required('Campo obrigatório')
       .email('Formato inválido'),
-    phone: yup.string().required('Campo obrigatório'),
-    password: yup.string().required('Campo obrigatório'),
-    confirmedPassword: yup.string().required('Campo obrigatório'),
-    agreeTerms: yup
+    phone: yup
       .string()
+      .required('Campo obrigatório')
+      .min(10, 'Formato inválido.'),
+    password: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(6, 'Senha muito curta.'),
+    confirmedPassword: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(6, 'Senha muito curta.')
+      .test('pw-match', 'Senhas devem ser iguais', function (value) {
+        return this.parent.password === value;
+      }),
+    agreeTerms: yup
+      .boolean()
       .required('Campo obrigatório')
       .oneOf([true], 'Campo obrigatório'),
   });

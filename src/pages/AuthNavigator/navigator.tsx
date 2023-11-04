@@ -7,10 +7,10 @@ import {ResetPasswordConfirmation} from './ResetPasswordConfirmation';
 // import views here
 
 const views: {[key: string]: any} = {
+  InputPassword,
   Auth,
   InputToken,
   Register,
-  InputPassword,
   ResetPasswordConfirmation,
   ResetPassword,
   // add viewsName here

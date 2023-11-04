@@ -16,7 +16,7 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
     resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit = (params: IRegisterForm<string>) => {
+  const onSubmit = (params: IRegisterForm<string, boolean>) => {
     navigate(AppRoutes.MainNavigator);
   };
 

@@ -9,7 +9,10 @@ const exec = (): ISchema<ILoginForm<string>, ILoginForm<any>> => {
       .lowercase()
       .required('Campo obrigatório')
       .email('Formato inválido'),
-    password: yup.string().required('Campo obrigatório'),
+    password: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(6, 'Senha muito curta.'),
   });
 };
 

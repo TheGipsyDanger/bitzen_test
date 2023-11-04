@@ -10,14 +10,14 @@ export interface IChangePasswordForm<T> {
   password: T;
   confirmedPassword: T;
 }
-export interface IRegisterForm<T> {
+export interface IRegisterForm<T, R> {
   name: T;
   document: T;
   email: T;
   phone: T;
   password: T;
   confirmedPassword: T;
-  agreeTerms: boolean;
+  agreeTerms: R;
 }
 
 export interface IRegisterPetForm<T> {

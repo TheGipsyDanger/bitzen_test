@@ -31,14 +31,14 @@ export type ISchema<
 export type IFormInputNameAccepeted =
   | keyof ILoginForm<string>
   | keyof IChangePasswordForm<string>
-  | keyof IRegisterForm<string>
+  | keyof IRegisterForm<string, boolean>
   | keyof IRegisterPetForm<string>
   | keyof ISearchForm<string>
   | keyof IResetPasswordForm<string>;
 
 export type IFormErrosAccepeted = IFormErros<ILoginForm<string>> &
   IFormErros<IChangePasswordForm<string>> &
-  IFormErros<IRegisterForm<string>> &
+  IFormErros<IRegisterForm<string, boolean>> &
   IFormErros<IRegisterPetForm<string>> &
   IFormErros<ISearchForm<string>> &
   IFormErros<IResetPasswordForm<string>>;
@@ -46,7 +46,7 @@ export type IFormErrosAccepeted = IFormErros<ILoginForm<string>> &
 export type ITriggerFormInput =
   | ITrigger<ILoginForm<string>>
   | ITrigger<IChangePasswordForm<string>>
-  | ITrigger<IRegisterForm<string>>
+  | ITrigger<IRegisterForm<string, boolean>>
   | ITrigger<IRegisterPetForm<string>>
   | ITrigger<ISearchForm<string>>
   | ITrigger<IResetPasswordForm<string>>;

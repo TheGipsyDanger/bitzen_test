@@ -1,13 +1,61 @@
 import {ISchema, IRegisterPetForm} from '~/utils/interfaces';
-
+import {useMask} from '~/utils';
+import moment from 'moment';
 import * as yup from 'yup';
 
 const exec = (): ISchema<IRegisterPetForm<string>, IRegisterPetForm<any>> => {
   return yup.object().shape({
     image: yup.string().required('Campo obrigatório'),
-    name: yup.string().required('Campo obrigatório'),
+    name: yup
+      .string()
+      .required('Campo obrigatório')
+      .min(4, 'Formato inválido.'),
     color: yup.string().required('Campo obrigatório'),
-    birth: yup.string().required('Campo obrigatório'),
+    birth: yup
+      .string()
+      .required('Campo obrigatório')
+      .test('birthday-format', 'Tamanho minímo', function (birthday) {
+        const birthdayCheck: string = String(birthday);
+        return birthdayCheck.length == 8;
+      })
+      .test(
+        'birthday-format',
+        'O dia deve ser menor ou igual 31',
+        function (birthday) {
+          const birthdayCheck: string = useMask(String(birthday), '99/99/9999');
+          const divideDate: string[] = birthdayCheck.split('/');
+          return Number(divideDate[0]) <= 31;
+        }
+      )
+      .test(
+        'birthday-format',
+        'O mês deve ser menor ou igual 12',
+        function (birthday) {
+          const birthdayCheck: string = useMask(String(birthday), '99/99/9999');
+          const divideDate: string[] = birthdayCheck.split('/');
+          return Number(divideDate[1]) <= 12;
+        }
+      )
+      .test(
+        'birthday-format',
+        'O ano deve ser menor ou igual o ano atual',
+        function (birthday) {
+          const birthdayCheck: string = useMask(String(birthday), '99/99/9999');
+          const divideDate: string[] = birthdayCheck.split('/');
+          const now = new Date();
+          return Number(divideDate[2]) <= now.getFullYear();
+        }
+      )
+      .test(
+        'birthday-format',
+        'Você deve ter mais de 18 anos para o cadastro',
+        function (birthday) {
+          const birthdayCheck: string = useMask(String(birthday), '99/99/9999');
+          const divideDate: string[] = birthdayCheck.split('/');
+          const momentDate = `${divideDate[1]}/${divideDate[0]}/${divideDate[2]}`;
+          return moment().diff(moment(momentDate), 'years') >= 18;
+        }
+      ),
     about: yup.string().required('Campo obrigatório'),
   });
 };
