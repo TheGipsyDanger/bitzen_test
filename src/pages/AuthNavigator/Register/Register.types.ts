@@ -14,8 +14,8 @@ export namespace IRegister {
     handleSubmit: IHandlerSubmit<IRegisterForm<string>>;
     errors: IFormErros<IRegisterForm<string>>;
     onSubmit: (data: IRegisterForm<string>) => void;
-    goToLogin: () => void;
     isValid: boolean;
+    goToLogin: () => void;
   }
   export interface IRegisterFormView {
     control: IControl<IRegisterForm<string>>;

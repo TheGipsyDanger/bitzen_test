@@ -3,8 +3,8 @@ import {RegisterPet} from './RegisterPet';
 // import views here
 
 const views: {[key: string]: any} = {
-  Home,
   RegisterPet,
+  Home,
   // add viewsName here
 };
 

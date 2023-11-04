@@ -19,3 +19,11 @@ export interface IRegisterForm<T> {
   confirmedPassword: T;
   agreeTerms: boolean;
 }
+
+export interface IRegisterPetForm<T> {
+  image: T;
+  name: T;
+  color: T;
+  birth: T;
+  about: T;
+}

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {withChildren} from '~/utils';
-import {RFValue} from 'react-native-responsive-fontsize';
 
 export const theme = {
   space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80],
@@ -31,6 +30,7 @@ export const theme = {
     neutral_400: '#B3B3B3',
     neutral_500: '#8C8C8C',
     neutral_600: '#737373',
+    neutral_700: '#595959',
     neutral_800: '#404040',
     neutral_900: '#262626',
     blue_black: '#183E4B',

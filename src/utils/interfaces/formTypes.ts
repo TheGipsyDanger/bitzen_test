@@ -10,6 +10,7 @@ import {
   IChangePasswordForm,
   IRegisterForm,
   IResetPasswordForm,
+  IRegisterPetForm,
 } from './formSchemaTypes';
 import * as yup from 'yup';
 
@@ -30,15 +31,18 @@ export type IFormInputNameAccepeted =
   | keyof ILoginForm<string>
   | keyof IChangePasswordForm<string>
   | keyof IRegisterForm<string>
+  | keyof IRegisterPetForm<string>
   | keyof IResetPasswordForm<string>;
 
 export type IFormErrosAccepeted = IFormErros<ILoginForm<string>> &
   IFormErros<IChangePasswordForm<string>> &
   IFormErros<IRegisterForm<string>> &
+  IFormErros<IRegisterPetForm<string>> &
   IFormErros<IResetPasswordForm<string>>;
 
 export type ITriggerFormInput =
   | ITrigger<ILoginForm<string>>
   | ITrigger<IChangePasswordForm<string>>
   | ITrigger<IRegisterForm<string>>
+  | ITrigger<IRegisterPetForm<string>>
   | ITrigger<IResetPasswordForm<string>>;

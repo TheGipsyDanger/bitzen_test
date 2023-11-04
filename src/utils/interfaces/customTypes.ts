@@ -45,6 +45,7 @@ export interface IWrappedSystem
 
 export type ITextVariants =
   | 'title'
+  | 'titleBold'
   | 'label'
   | 'labelSemiBold'
   | 'infos'

@@ -44,6 +44,10 @@ export default {
           fontFamily: theme.fonts.medium,
           fontSize: theme.fontSizes.normal,
         },
+        titleBold: {
+          fontFamily: theme.fonts.medium,
+          fontSize: theme.fontSizes.normal,
+        },
         label: {
           fontFamily: theme.fonts.regular,
           fontSize: theme.fontSizes.small,

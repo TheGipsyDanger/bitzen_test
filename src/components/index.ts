@@ -9,4 +9,6 @@ export * from './Avatar';
 export * from './UserInfos';
 export * from './ProfileItem';
 export * from './TabIcon';
+export * from './ImageImput';
+export * from './Card';
 // Import component here
