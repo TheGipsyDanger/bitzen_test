@@ -8,4 +8,5 @@ export * from './LinearImage';
 export * from './Avatar';
 export * from './UserInfos';
 export * from './ProfileItem';
+export * from './TabIcon';
 // Import component here

@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as views from '../pages';
 import {inTest} from '../../app.json';
 import * as Icons from '~/assets/svgs';
+import {TabIcon} from '~/components';
 
 const Stack = createStackNavigator();
 const Main = createBottomTabNavigator();
@@ -14,13 +15,10 @@ const Tabs = () => (
   <Main.Navigator
     initialRouteName={'ProfileNavigator'}
     screenOptions={({route}) => ({
-      tabBarIcon: ({focused, color, size}) => {
-        return route.name === 'MainNavigator' ? (
-          <Icons.Pet color={!focused ? '#8C8C8C' : '#183E4B'} />
-        ) : (
-          <Icons.User color={!focused ? '#8C8C8C' : '#183E4B'} />
-        );
-      },
+      tabBarShowLabel: false,
+      tabBarIcon: ({focused, color}) => (
+        <TabIcon routeName={route.name} focused={focused} color={color} />
+      ),
       tabBarActiveTintColor: '#183E4B',
       tabBarInactiveTintColor: '#8C8C8C',
     })}
