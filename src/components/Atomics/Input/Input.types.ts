@@ -41,6 +41,7 @@ export namespace IInput {
     type: string;
     value: string;
     placeholder: string;
+    multiline?: boolean;
     secureTextEntry: boolean;
   }
   export interface IModelProps extends IView {}

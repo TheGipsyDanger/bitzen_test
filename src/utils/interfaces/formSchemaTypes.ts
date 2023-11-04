@@ -27,3 +27,7 @@ export interface IRegisterPetForm<T> {
   birth: T;
   about: T;
 }
+
+export interface ISearchForm<T> {
+  query: T;
+}

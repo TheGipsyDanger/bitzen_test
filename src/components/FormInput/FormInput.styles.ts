@@ -4,9 +4,7 @@ import {theme} from '~/styles';
 
 export default {
   Content: styled(Div).attrs({
-    height: 48,
     px: 3,
-    justifyContent: 'center',
     borderWidth: 1,
   })`
     border-radius: ${theme.raddi.medium}px;

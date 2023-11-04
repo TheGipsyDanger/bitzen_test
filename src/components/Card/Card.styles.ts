@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Div} from '~/components';
+import {Div} from '~/components/Atomics';
 import {theme} from '~/styles';
 
 export default {

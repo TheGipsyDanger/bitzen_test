@@ -16,6 +16,9 @@ export namespace IFormInput {
     name: IFormInputNameAccepeted;
     trigger: ITriggerFormInput;
     onChange: (...event: any[]) => void;
+    prepend?: JSX.Element;
+    append?: JSX.Element;
+    multiline?: boolean;
   }
   export interface IModelProps {}
   export interface IModel {}

@@ -15,6 +15,7 @@ export const Input = (props: IInput.IView) => {
     color = 'black',
     font = 'regular',
     size = 'small',
+    multiline = false,
     editable = true,
     placeholder = '',
     secureTextEntry = false,
@@ -40,6 +41,11 @@ export const Input = (props: IInput.IView) => {
       autoCorrect={false}
       keyboardType={type === 'number' ? 'numeric' : undefined}
       secureTextEntry={secureTextEntry}
+      multiline={multiline}
+      numberOfLines={multiline ? 4 : 1}
+      style={{
+        alignItems: multiline ? 'flex-start' : 'center',
+      }}
       opacity={disabled ? 0.5 : 1}
     />
   );

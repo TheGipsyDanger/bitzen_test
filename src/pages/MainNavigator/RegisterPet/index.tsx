@@ -4,6 +4,7 @@ import {Header, Distribution, ImageImput, Card, FormInput} from '~/components';
 import {IRegisterPet} from '~/pages/MainNavigator/RegisterPet/RegisterPet.types';
 import {useRegisterPet} from '~/pages/MainNavigator/RegisterPet/RegisterPet.model';
 import {Controller} from 'react-hook-form';
+import * as Icons from '~/assets/svgs';
 
 export const RegisterPet = (props: IRegisterPet.IView) => {
   const {control, trigger, errors} = useRegisterPet(props);
@@ -48,6 +49,7 @@ export const RegisterPet = (props: IRegisterPet.IView) => {
                   defaultValue=""
                   render={({field: {onChange, onBlur, value, name}}) => (
                     <FormInput
+                      append={<Icons.Calendar />}
                       placeholder="Data"
                       {...{onChange, onBlur, value, name, trigger, errors}}
                     />
@@ -59,6 +61,7 @@ export const RegisterPet = (props: IRegisterPet.IView) => {
                   defaultValue=""
                   render={({field: {onChange, onBlur, value, name}}) => (
                     <FormInput
+                      multiline={true}
                       placeholder="Sobre o pet"
                       {...{onChange, onBlur, value, name, trigger, errors}}
                     />
