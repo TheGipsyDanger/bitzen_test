@@ -16,6 +16,7 @@ export const Auth = (props: IAuth.IView) => {
     trigger,
     isValid,
     onSubmit,
+    goToRegister,
     goToResetPassword,
   } = useAuth();
 
@@ -57,12 +58,18 @@ export const Auth = (props: IAuth.IView) => {
               />
             )}
           />
-          <Button
-            onPress={goToResetPassword}
-            label="Esqueceu sua senha?"
-            variant="link"
-            alignSelf="flex-end"
-          />
+          <Div flexDirection="row" justifyContent="space-between">
+            <Button
+              onPress={goToRegister}
+              label="Não tem conta?"
+              variant="link"
+            />
+            <Button
+              onPress={goToResetPassword}
+              label="Esqueceu sua senha?"
+              variant="link"
+            />
+          </Div>
           <Button
             onPress={handleSubmit(onSubmit)}
             label="Entrar"

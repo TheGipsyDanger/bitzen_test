@@ -24,6 +24,10 @@ export const useAuth = (): IAuth.IModel => {
     navigate(AppRoutes.ResetPassword);
   };
 
+  const goToRegister = () => {
+    navigate(AppRoutes.Register);
+  };
+
   return {
     control,
     trigger,
@@ -31,6 +35,7 @@ export const useAuth = (): IAuth.IModel => {
     onSubmit,
     errors,
     isValid,
+    goToRegister,
     goToResetPassword,
   };
 };

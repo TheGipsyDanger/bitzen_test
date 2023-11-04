@@ -16,5 +16,6 @@ export namespace IAuth {
     onSubmit: (data: ILoginForm<string>) => void;
     isValid: boolean;
     goToResetPassword: () => void;
+    goToRegister: () => void;
   }
 }

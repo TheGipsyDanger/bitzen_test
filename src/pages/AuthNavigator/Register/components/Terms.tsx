@@ -10,8 +10,8 @@ export const Terms = ({control}: IRegister.ITermFormView) => (
       <Controller
         control={control}
         name="agreeTerms"
-        defaultValue={true}
-        render={({field: {onChange, value}}) => (
+        defaultValue={false}
+        render={({field: {onChange, onBlur, value}}) => (
           <Checkbox checked={value} onChange={() => onChange(!value)} />
         )}
       />

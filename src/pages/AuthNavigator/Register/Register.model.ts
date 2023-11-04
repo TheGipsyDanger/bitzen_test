@@ -11,6 +11,7 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
     control,
     trigger,
     handleSubmit,
+    getValues,
     formState: {errors, isValid},
   } = useForm({
     resolver: yupResolver(registerSchema),

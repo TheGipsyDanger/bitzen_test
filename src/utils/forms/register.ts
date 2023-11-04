@@ -38,8 +38,9 @@ const exec = (): ISchema<
       }),
     agreeTerms: yup
       .boolean()
+      .default(false)
       .required('Campo obrigatório')
-      .oneOf([true], 'Campo obrigatório'),
+      .oneOf([false], 'Campo obrigatório'),
   });
 };
 
