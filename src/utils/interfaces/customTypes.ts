@@ -74,7 +74,7 @@ export interface ITextSystem
 
 export interface IBaseResponse {
   message?: string;
-  status: 'Ok' | 'Error';
+  status: 'Success' | 'Error';
 }
 
 export interface ISvgIcons {

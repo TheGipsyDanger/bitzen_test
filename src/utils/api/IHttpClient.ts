@@ -22,7 +22,7 @@ export enum HttpStatusCode {
 }
 
 export type HttpResponse<T = any> = {
-  message: string;
   statusCode: HttpStatusCode;
   data: T;
+  message: string;
 };

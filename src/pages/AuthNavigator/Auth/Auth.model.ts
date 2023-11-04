@@ -5,6 +5,7 @@ import {loginSchema} from '~/utils/forms';
 import {ILoginForm} from '~/utils/interfaces';
 import {AppRoutes} from '~/routes/routeConfig';
 import {navigate} from '~/utils/navigator';
+import {callPostLogin} from '~/data/factories';
 
 export const useAuth = (): IAuth.IModel => {
   const {
@@ -17,7 +18,9 @@ export const useAuth = (): IAuth.IModel => {
   });
 
   const onSubmit = (params: ILoginForm<string>) => {
-    navigate(AppRoutes.MainNavigator);
+    (async () => {
+      await callPostLogin(params);
+    })();
   };
 
   const goToResetPassword = () => {
