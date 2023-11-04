@@ -5,4 +5,7 @@ export * from './Header';
 export * from './Checkbox';
 export * from './Distribution';
 export * from './LinearImage';
+export * from './Avatar';
+export * from './UserInfos';
+export * from './ProfileItem';
 // Import component here

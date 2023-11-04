@@ -1,8 +1,7 @@
-export namespace IProfile {
+export namespace IUserInfos {
   export interface IView {}
   export interface IModelProps {}
   export interface IModel {
-    goToMyInfos: () => void;
-    loggout: () => void;
+    top: number;
   }
 }

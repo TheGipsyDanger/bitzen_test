@@ -12,7 +12,7 @@ const tabViewsNames = ['MainNavigator', 'ProfileNavigator'];
 
 const Tabs = () => (
   <Main.Navigator
-    initialRouteName={'MainNavigator'}
+    initialRouteName={'ProfileNavigator'}
     screenOptions={({route}) => ({
       tabBarIcon: ({focused, color, size}) => {
         return route.name === 'MainNavigator' ? (
