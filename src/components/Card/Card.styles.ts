@@ -9,8 +9,8 @@ export default {
     shadowOpacity: 0.2,
     shadowRadius: 3,
   })`
-    padding: ${theme.space[4]}px ${theme.space[3]}px;
-    border-radius: ${theme.raddi.double}px;
+    padding: ${theme.space[5]}px ${theme.space[4]}px;
+    border-radius: ${theme.raddi.normal}px;
     background-color: ${theme.colors.white};
   `,
 };
