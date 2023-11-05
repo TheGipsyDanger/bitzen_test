@@ -5,7 +5,8 @@ import {loginSchema} from '~/utils/forms';
 import {ILoginForm} from '~/utils/interfaces';
 import {AppRoutes} from '~/routes/routeConfig';
 import {navigate} from '~/utils/navigator';
-import {callPostLogin} from '~/data/factories';
+import {useAppDispatch, useAppSelector} from '~/utils';
+import {loginActions} from '~/redux/actions';
 
 export const useAuth = (): IAuth.IModel => {
   const {
@@ -17,10 +18,10 @@ export const useAuth = (): IAuth.IModel => {
     resolver: yupResolver(loginSchema),
   });
 
+  const dispatch = useAppDispatch();
+
   const onSubmit = (params: ILoginForm<string>) => {
-    (async () => {
-      await callPostLogin(params);
-    })();
+    dispatch(loginActions.request(params));
   };
 
   const goToResetPassword = () => {

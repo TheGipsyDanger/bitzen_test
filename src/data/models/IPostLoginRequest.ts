@@ -1,3 +1,5 @@
-import {IUserData} from '~/utils/interfaces';
+import {IUserData, IBaseResponse} from '~/utils';
 
-export interface IPostLoginRequest extends IUserData {}
+export interface IPostLoginRequest extends IBaseResponse {
+  data: IUserData;
+}
