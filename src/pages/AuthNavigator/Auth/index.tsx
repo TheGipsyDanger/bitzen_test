@@ -15,6 +15,7 @@ export const Auth = (props: IAuth.IView) => {
     errors,
     trigger,
     isValid,
+    isLoading,
     onSubmit,
     goToRegister,
     goToResetPassword,
@@ -71,9 +72,10 @@ export const Auth = (props: IAuth.IView) => {
             />
           </Div>
           <Button
+            isLoading={isLoading}
             onPress={handleSubmit(onSubmit)}
             label="Entrar"
-            variant="primary"
+            variant={isValid ? 'primary' : 'disable'}
           />
         </Spacing>
       </S.Content>

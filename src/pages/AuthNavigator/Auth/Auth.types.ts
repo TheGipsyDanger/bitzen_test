@@ -15,6 +15,7 @@ export namespace IAuth {
     errors: IFormErros<ILoginForm<string>>;
     onSubmit: (data: ILoginForm<string>) => void;
     isValid: boolean;
+    isLoading: boolean;
     goToResetPassword: () => void;
     goToRegister: () => void;
   }

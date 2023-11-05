@@ -6,7 +6,7 @@ import {useInputPassword} from '~/pages/AuthNavigator/InputPassword/InputPasswor
 import {Controller} from 'react-hook-form';
 
 export const InputPassword = (props: IInputPassword.IView) => {
-  const {control, trigger, handleSubmit, onSubmit, errors, isValid} =
+  const {control, trigger, handleSubmit, onSubmit, errors, isValid, isLoading} =
     useInputPassword(props);
 
   return (
@@ -45,7 +45,12 @@ export const InputPassword = (props: IInputPassword.IView) => {
               />
             )}
           />
-          <Button label="Redefinir senha" variant="primary" />
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            isLoading={isLoading}
+            label="Redefinir senha"
+            variant={isValid ? 'primary' : 'disable'}
+          />
         </Spacing>
       </Distribution>
     </Div>

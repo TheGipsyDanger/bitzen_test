@@ -14,6 +14,7 @@ export namespace IInputPassword {
     handleSubmit: IHandlerSubmit<IChangePasswordForm<string>>;
     errors: IFormErros<IChangePasswordForm<string>>;
     onSubmit: (data: IChangePasswordForm<string>) => void;
+    isLoading: boolean;
     isValid: boolean;
   }
 }

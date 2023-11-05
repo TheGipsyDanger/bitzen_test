@@ -19,6 +19,7 @@ export const useAuth = (): IAuth.IModel => {
   });
 
   const dispatch = useAppDispatch();
+  const {isLoading} = useAppSelector(state => state.User);
 
   const onSubmit = (params: ILoginForm<string>) => {
     dispatch(loginActions.request(params));
@@ -35,11 +36,12 @@ export const useAuth = (): IAuth.IModel => {
   return {
     control,
     trigger,
-    handleSubmit,
     onSubmit,
     errors,
     isValid,
+    isLoading,
     goToRegister,
+    handleSubmit,
     goToResetPassword,
   };
 };

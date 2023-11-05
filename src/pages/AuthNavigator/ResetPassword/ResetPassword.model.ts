@@ -1,10 +1,10 @@
 import {IResetPassword} from '~/pages/AuthNavigator/ResetPassword/ResetPassword.types';
 import {resetPasswordSchema} from '~/utils/forms';
 import {IResetPasswordForm} from '~/utils/interfaces';
-import {AppRoutes} from '~/routes/routeConfig';
-import {navigate} from '~/utils/navigator';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {useAppDispatch, useAppSelector} from '~/utils';
+import {resendCodeActions} from '~/redux/actions';
 
 export const useResetPassword = (
   props: IResetPassword.IModelProps
@@ -18,8 +18,12 @@ export const useResetPassword = (
     resolver: yupResolver(resetPasswordSchema),
   });
 
+  const dispatch = useAppDispatch();
+
+  const {isLoading} = useAppSelector(state => state.User);
+
   const onSubmit = (params: IResetPasswordForm<string>) => {
-    navigate(AppRoutes.MainNavigator);
+    dispatch(resendCodeActions.request(params));
   };
 
   return {
@@ -29,5 +33,6 @@ export const useResetPassword = (
     onSubmit,
     errors,
     isValid,
+    isLoading,
   };
 };

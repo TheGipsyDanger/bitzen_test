@@ -1,12 +1,12 @@
 import {createRef} from 'react';
 import {CommonActions, NavigationContainerRef} from '@react-navigation/native';
-import {RootParamList} from '~/routes/routeConfig';
+import {IRoute, RootParamList} from '~/routes/routeConfig';
 
 export const navigationRef = createRef<NavigationContainerRef>();
 
 type IRouteNamesToNavigate = keyof RootParamList;
 
-export const navigate = (name: IRouteNamesToNavigate, params?: any) =>
+export const navigate = (name: IRouteNamesToNavigate, params?: IRoute) =>
   navigationRef.current?.navigate(name, params);
 
 export const reset = (route: string) =>

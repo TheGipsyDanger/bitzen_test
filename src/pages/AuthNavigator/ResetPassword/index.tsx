@@ -7,7 +7,7 @@ import {Password} from '~/assets/svgs';
 import {Controller} from 'react-hook-form';
 
 export const ResetPassword = (props: IResetPassword.IView) => {
-  const {control, handleSubmit, errors, trigger, isValid, onSubmit} =
+  const {control, handleSubmit, errors, trigger, isValid, onSubmit, isLoading} =
     useResetPassword(props);
 
   return (
@@ -45,7 +45,12 @@ export const ResetPassword = (props: IResetPassword.IView) => {
               />
             )}
           />
-          <Button label="Próximo" variant="primary" />
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            label="Próximo"
+            isLoading={isLoading}
+            variant={isValid ? 'primary' : 'disable'}
+          />
         </Spacing>
       </Distribution>
     </Div>

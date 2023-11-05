@@ -15,6 +15,8 @@ export const InputToken = (props: IInputToken.IView) => {
     getCellOnLayoutHandler,
     onSubmit,
     resendCode,
+    isValid,
+    isLoading,
   } = useInputToken(props);
 
   return (
@@ -53,7 +55,12 @@ export const InputToken = (props: IInputToken.IView) => {
               )}
             />
             <Spacing space={4}>
-              <Button label="Próximo" variant="primary" onPress={onSubmit} />
+              <Button
+                label="Próximo"
+                onPress={onSubmit}
+                isLoading={isLoading}
+                variant={isValid ? 'primary' : 'disable'}
+              />
               <Div flexDirection="row" center>
                 <Text
                   variant="infos"

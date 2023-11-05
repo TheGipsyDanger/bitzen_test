@@ -1,11 +1,13 @@
 import {useState} from 'react';
+import {useRoute} from '@react-navigation/native';
+import {IRoute} from '~/routes/routeConfig';
 import {IInputToken} from '~/pages/AuthNavigator/InputToken/InputToken.types';
 import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import {navigate} from '~/utils/navigator';
-import {AppRoutes} from '~/routes/routeConfig';
+import {useAppDispatch, useAppSelector} from '~/utils';
+import {resendCodeActions, validateCodeActions} from '~/redux/actions';
 
 export const useInputToken = (
   props: IInputToken.IModelProps
@@ -17,19 +19,34 @@ export const useInputToken = (
     setValue,
   });
 
+  //@ts-ignore
+  const {params} = useRoute<IRoute>();
+
+  const dispatch = useAppDispatch();
+
   const onSubmit = () => {
-    navigate(AppRoutes.ResetPasswordConfirmation);
+    dispatch(
+      validateCodeActions.request({email: String(params?.email), token: value})
+    );
   };
 
-  const resendCode = () => {};
+  const resendCode = () => {
+    dispatch(resendCodeActions.request({email: String(params?.email)}));
+  };
+
+  const {isLoading} = useAppSelector(state => state.User);
+
+  const isValid = value.length === 4;
 
   return {
     ref,
     value,
+    isValid,
     setValue,
     onSubmit,
     resendCode,
     inputProps,
+    isLoading,
     getCellOnLayoutHandler,
   };
 };

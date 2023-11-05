@@ -15,5 +15,6 @@ export namespace IResetPassword {
     errors: IFormErros<IResetPasswordForm<string>>;
     onSubmit: (data: IResetPasswordForm<string>) => void;
     isValid: boolean;
+    isLoading: boolean;
   }
 }

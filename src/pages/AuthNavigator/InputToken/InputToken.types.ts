@@ -11,6 +11,8 @@ export namespace IInputToken {
     onSubmit: () => void;
     resendCode: () => void;
     ref: React.RefObject<TextInput>;
+    isValid: boolean;
+    isLoading: boolean;
     setValue: React.Dispatch<React.SetStateAction<string>>;
     inputProps: {
       onPressOut: (event: GestureResponderEvent) => void;

@@ -8,6 +8,7 @@ export enum AppRoutes {
   TabNavigator = 'TabNavigator',
   Auth = 'Auth',
   InputPassword = 'InputPassword',
+  InputToken = 'InputToken',
   Register = 'Register',
   ResetPassword = 'ResetPassword',
   ResetPasswordConfirmation = 'ResetPasswordConfirmation',
@@ -23,7 +24,13 @@ export type RootParamList = {
   [AppRoutes.MainNavigator]: undefined;
   [AppRoutes.ProfileNavigator]: undefined;
   [AppRoutes.Auth]: undefined;
-  [AppRoutes.InputPassword]: undefined;
+  [AppRoutes.InputPassword]: {
+    email: string;
+    token: string;
+  };
+  [AppRoutes.InputToken]: {
+    email: string;
+  };
   [AppRoutes.Register]: undefined;
   [AppRoutes.ResetPassword]: undefined;
   [AppRoutes.ResetPasswordConfirmation]: undefined;
