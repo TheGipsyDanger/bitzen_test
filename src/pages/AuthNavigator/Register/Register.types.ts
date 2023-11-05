@@ -9,6 +9,7 @@ export namespace IRegister {
   export interface IView {}
   export interface IModelProps {}
   export interface IModel {
+    notNow: () => void;
     control: IControl<IRegisterForm<string, boolean>>;
     trigger: ITrigger<IRegisterForm<string, boolean>>;
     handleSubmit: IHandlerSubmit<IRegisterForm<string, boolean>>;

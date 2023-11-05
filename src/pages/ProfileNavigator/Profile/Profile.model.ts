@@ -4,7 +4,10 @@ import {navigate} from '~/utils/navigator';
 
 export const useProfile = (props: IProfile.IModelProps): IProfile.IModel => {
   const goToMyInfos = () => navigate(AppRoutes.MyInfos);
-  const loggout = () => {};
+
+  const loggout = () => {
+    navigate(AppRoutes.AuthNavigator);
+  };
   return {
     goToMyInfos,
     loggout,

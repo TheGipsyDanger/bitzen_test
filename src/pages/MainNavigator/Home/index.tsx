@@ -1,19 +1,29 @@
 import * as React from 'react';
-import {Image} from 'react-native';
-import {Div, Spacing, Text} from '~/components/Atomics';
+import {ActivityIndicator, FlatList} from 'react-native';
+import {Conditional, Div, Text} from '~/components/Atomics';
 import {Controller} from 'react-hook-form';
-import {Header, Distribution, LinearImage, FormInput} from '~/components';
+import {Header, FormInput} from '~/components';
 import {useHome} from '~/pages/MainNavigator/Home/Home.model';
 import {IHome} from '~/pages/MainNavigator/Home/Home.types';
 import * as Icons from '~/assets/svgs';
 
 export const Home = (props: IHome.IView) => {
-  const {control, handleSubmit, errors, trigger, isValid} = useHome(props);
+  const {
+    control,
+    handleSubmit,
+    errors,
+    trigger,
+    isValid,
+    pets,
+    keyExtractor,
+    renderItem,
+    isLoading,
+  } = useHome(props);
   return (
     <Div flex={1} bg="neutral_100" testID={`Home`}>
       <Header.Internal />
-      <Distribution>
-        <Spacing space={4}>
+      <Div flex={1} px={4}>
+        <Div mb={4}>
           <Controller
             control={control}
             name="query"
@@ -31,13 +41,30 @@ export const Home = (props: IHome.IView) => {
               />
             )}
           />
-          <Div>
-            <LinearImage url="https://www.petz.com.br/blog//wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg" />
-            <LinearImage url="https://www.petz.com.br/blog//wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg" />
-            <LinearImage url="https://www.petz.com.br/blog//wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg" />
+        </Div>
+        <Conditional render={isLoading}>
+          <Div flex={1} center>
+            <ActivityIndicator size="large" />
           </Div>
-        </Spacing>
-      </Distribution>
+          <Div flex={1}>
+            <FlatList
+              style={{
+                flex: 1,
+              }}
+              ListEmptyComponent={() => (
+                <Div flex={1} center>
+                  <Text>{`Nenhum pet encontrado`}</Text>
+                </Div>
+              )}
+              data={pets}
+              extraData={pets}
+              renderItem={renderItem}
+              keyExtractor={keyExtractor}
+              showsVerticalScrollIndicator={false}
+            />
+          </Div>
+        </Conditional>
+      </Div>
     </Div>
   );
 };

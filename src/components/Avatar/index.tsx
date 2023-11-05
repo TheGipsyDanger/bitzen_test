@@ -3,7 +3,7 @@ import {Image} from 'react-native';
 import {Div} from '~/components/Atomics';
 import {IAvatar} from '~/components/Avatar/Avatar.types';
 
-export const Avatar = ({size = 64}: IAvatar.IView) => (
+export const Avatar = ({size = 64, image}: IAvatar.IView) => (
   <Div
     height={size}
     width={size}
@@ -17,7 +17,7 @@ export const Avatar = ({size = 64}: IAvatar.IView) => (
         height: size,
       }}
       source={{
-        uri: 'https://www.petz.com.br/blog//wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg',
+        uri: image,
       }}
     />
   </Div>

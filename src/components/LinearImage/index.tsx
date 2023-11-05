@@ -9,6 +9,7 @@ export const LinearImage = ({
   height = 344,
   to = 'black',
   original = 'transparent',
+  name = '',
 }: ILinearImage.IView) => (
   <Div radius="medium" overflow="hidden" mb={4}>
     <ImageBackground
@@ -26,7 +27,7 @@ export const LinearImage = ({
       >
         <Div px={4} pb={4}>
           <Text variant="name" color="white">
-            {'Leona'}
+            {name}
           </Text>
         </Div>
       </LinearGradient>

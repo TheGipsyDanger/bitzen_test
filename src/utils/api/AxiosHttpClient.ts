@@ -17,6 +17,7 @@ export class AxiosHttpClientDefault implements HttpClient {
       Alert.alert('Ops!', `${error.response.data.message}`, [
         {text: 'OK', onPress: () => {}},
       ]);
+      console.log(error.response);
       axiosResponse = error.response;
     }
     return {

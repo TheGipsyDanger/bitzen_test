@@ -1,5 +1,6 @@
 import {IRegister} from '~/pages/AuthNavigator/Register/Register.types';
 import {useForm} from 'react-hook-form';
+import {Alert} from 'react-native';
 import {registerSchema} from '~/utils/forms';
 import {IRegisterForm} from '~/utils/interfaces';
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -23,6 +24,9 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
 
   const goToLogin = () => navigate(AppRoutes.Auth);
 
+  const notNow = () =>
+    Alert.alert('Ops!', `Em breve`, [{text: 'OK', onPress: () => {}}]);
+
   return {
     control,
     trigger,
@@ -31,5 +35,6 @@ export const useRegister = (props: IRegister.IModelProps): IRegister.IModel => {
     errors,
     isValid,
     goToLogin,
+    notNow,
   };
 };

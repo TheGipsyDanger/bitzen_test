@@ -1,13 +1,21 @@
 import * as React from 'react';
 import {Div, Spacing, Text} from '~/components/Atomics';
-import {Header, Distribution, ImageImput, Card, FormInput} from '~/components';
+import {
+  Header,
+  Distribution,
+  ImageImput,
+  Card,
+  FormInput,
+  Button,
+} from '~/components';
 import {IRegisterPet} from '~/pages/MainNavigator/RegisterPet/RegisterPet.types';
 import {useRegisterPet} from '~/pages/MainNavigator/RegisterPet/RegisterPet.model';
 import {Controller} from 'react-hook-form';
 import * as Icons from '~/assets/svgs';
 
 export const RegisterPet = (props: IRegisterPet.IView) => {
-  const {control, trigger, errors} = useRegisterPet(props);
+  const {control, trigger, errors, handleSubmit, onSubmit, isValid} =
+    useRegisterPet(props);
   return (
     <Div flex={1} bg="neutral_100" testID={`RegisterPet`}>
       <Header.Default />
@@ -69,6 +77,11 @@ export const RegisterPet = (props: IRegisterPet.IView) => {
                 />
               </Spacing>
             </Card>
+            <Button
+              onPress={handleSubmit(onSubmit)}
+              label="Criar conta"
+              variant={isValid ? 'primary' : 'disable'}
+            />
           </Spacing>
         </Spacing>
       </Distribution>
